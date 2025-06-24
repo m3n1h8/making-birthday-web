@@ -87,6 +87,7 @@ function burnfire(){
     timewish.setAttribute("data-aos", "zoom-in-up");
     timewish.setAttribute("data-aos-duration", "2000");
     time.appendChild(timewish);
+    
     AOS.refresh(); 
 }
 cake.addEventListener("click", burnfire);

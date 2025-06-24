@@ -32,8 +32,24 @@ body{
     border-radius: 40px;
     background-color:#FFF8E1;
     box-shadow: 4px 4px 16px  #4a3119;
+    animation: infinite dance 0.5s;
 
 }
+@keyframes dance{
+        0%{
+            transform: translateY(-10px);
+            opacity: 1;
+        }
+        50%{
+            transform: translateY(-40px);
+        }
+        100%{
+            transform: translateY(0);
+           
+        }
+    }
+
+
 .btnhide{
     position: absolute;
     top: 0;
@@ -473,6 +489,32 @@ h2{
     font-weight: 600;
     
     color: #e49501;
+    animation: bay 2s;
+}
+
+@keyframes bay{
+    0%{transform: translateY(0);}
+    35%{
+        transform: translateY(-200px) scale(2);
+        color: white;
+        text-shadow: 0 0 10px black;
+        font-weight: 900;
+    }
+    55%{
+        transform: translateY(-250px) scale(2.6);
+        color: white;
+        text-shadow: 0 0 10px black;
+        font-weight: 900;
+    }
+    75%{
+        transform: translateY(-300px) scale(2.9);
+        color: white;
+        text-shadow: 0 0 10px black;
+        font-weight: 900;
+    }
+    100%{
+        transform: translateY(0);
+    }
 }
 #reverseclock{
     position: absolute;
@@ -480,7 +522,7 @@ h2{
     width:100%;
     text-align: center;
     font-size: 20px;
-    
+
     color: #e49501;
 
 }
@@ -555,6 +597,7 @@ h2{
     font-weight: 600;
     color:#613f20;
     margin-bottom: 70px;
+    text-transform: uppercase;
     
 }
 .loichuc{
