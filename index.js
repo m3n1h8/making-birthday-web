@@ -232,14 +232,19 @@ function watchvideo(){
 
 
    //
-   /// nút ẩn hiện form chỉnh sửa
+   // nút ẩn hiện form chỉnh sửa
+
    const hideEditBtn= document.querySelector(".hide-edit-btn");
    const formNhapLieu= document.querySelector(".form-nhap-lieu");
    
   function hideEditForm(){
-    formNhapLieu.classList.add("hide");
+    formNhapLieu.setAttribute("class","form-nhap-lieu")
+    // const tieudesothich=  document.querySelectorAll('.tieude-sothich')
+    // const arraytieudesothich = Array.from(tieudesothich).map((el)=>{return el.value})
+    // console.log(arraytieudesothich)
   }
 
   function appearEditForm(){
-    formNhapLieu.classList.remove("hide");
+    formNhapLieu.setAttribute("class","form-nhap-lieu2")
+    
   }

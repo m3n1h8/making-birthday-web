@@ -13,9 +13,9 @@
     <!--tích hợp AOS cuộn trang-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-   
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="formchungCSS.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
     <style>
 
     #balloon-container {
@@ -53,67 +53,14 @@
     footer{
     background:#EA961A;
     border-radius: 40px 0 px 0; 
-    padding: 20px;
+        padding: 20px;
     margin-top: 200px;}
   </style>
     <title>HAPPY BITHDAY KHÁNH LY ❤️</title>
 </head>
 <body>
 
-    <!--bảng nhập thông tin-->
-    <div class="appear-edit-btn" onclick="appearEditForm()"><ion-icon id="icon-edit"name="create-outline"></ion-icon>edit</div>
-
-    <div class="form-nhap-lieu" >
-        <div class="hide-edit-btn" onclick="hideEditForm()"><ion-icon name="exit-outline" id="hide-edit-icon"></ion-icon></div>
-        <form >
-            <fieldset>
-                <legend class="legend-first-child">ĐẦU TRANG</legend>
-                tiêu đề: <input type="text" placeholder="hôm nay là sinh nhật Khánh LY" class="tieude-dautrang"><br>
-                dòng thứ 2: <input type="text" placeholder="chúc cậu sinh nhật vui vẻ" class="dong2-dautrang"><br>
-                
-            </fieldset>
-
-            <fieldset>
-                <legend class="legend-first-child">THÔNG TIN</legend>
-                ngày sinh: <input type="date" placeholder="ngày sinh" class="ngay-sinh"><br>
-                ảnh 1: <input type="file" accept="image/*"  class="file-input"><br>
-                ảnh 2: <input type="file" accept="image/*"  class="file-input"><br>
-                ảnh 3: <input type="file" accept="image/*"  class="file-input"><br>
-            </fieldset>
-
-            <fieldset>
-                <legend class="legend-first-child">SỞ THÍCH</legend>
-                <fieldset>
-                    <legend>sở thích 1</legend>
-                    tiêu đề: <input type="text" placeholder="bún bò huế" class="tieude-sothich"><br>
-                    mô tả: <input type="text" placeholder="món thích nhất hiện tại 🙂" class="mota-sothich"><br>
-                    ảnh: <input type="file" accept="image/*"  class="file-input">
-                </fieldset>
-                <fieldset>
-                    <legend>sở thích 2</legend>
-                    tiêu đề: <input type="text" placeholder="bún bò huế" class="tieude-sothich"><br>
-                    mô tả: <input type="text" placeholder="món thích nhất hiện tại 🙂" class="mota-sothich"><br>
-                    ảnh: <input type="file" accept="image/*"  class="file-input">
-                </fieldset>
-                <fieldset>
-                    <legend>sở thích 3</legend>
-                    tiêu đề: <input type="text" placeholder="bún bò huế" class="tieude-sothich"><br>
-                    mô tả: <input type="text" placeholder="món thích nhất hiện tại 🙂" class="mota-sothich"><br>
-                    ảnh:  <input type="file" accept="image/*"  class="file-input">
-                </fieldset>
-                
-            </fieldset>
-            <fieldset>
-                <legend class="legend-first-child">QUÀ</legend>
-                tiêu đề: <input type="text" placeholder="gửi Khánh Ly món quà" class="tieude-qua"><br>
-                chọn video:<input type="file" accept="video/*" class="video-qua"><br>
-            </fieldset>
-            <div class="save-new-inform-btn" onclick="save()">TẠO</div>
-            
-        </form>
-        
-    </div>
-
+    
 
 
     <!--container-->
@@ -132,7 +79,7 @@
             <img src="cốc trà.jpg" class="headphoto" >
             
             <h1 data-aos="fade-up-right">Hôm nay <br>là  sinh nhật <br>Khánh Ly</h1>
-            <p class="headp" data-aos="fade-up-left">chúc cậu sinh nhật vui vẻ
+            <p class="headp dong2-dautrang" data-aos="fade-up-left">chúc cậu sinh nhật vui vẻ
 
             </p>
             <button onclick="scrolltogift()">BẬT NHẠC <span> <ion-icon name="musical-notes-outline" id="musicicon"></ion-icon></span></button>
@@ -141,7 +88,7 @@
 
         </header>
         <h1 class="title">VÀ CUỐI CÙNG <br> NGÀY ẤY CŨNG TỚI </h1>
-        <P class="titlep">30/5/2025</P>
+        <P class="titlep ngay-sinh" >30/5/2025</P>
 
  <!--thân trang-->
         <div class="body">
@@ -159,30 +106,31 @@
                 
                 <div class="interest">
                     
-                    <div class="item-sothich" >
+                    <div class="item">
                         <div id="inneriteminterest">
-                           <h2 class="inneriteminterest-h2"> ĂN ĐỒ CHIÊN GIÁN</h2>
+                           <h2>ĂN ĐỒ CHIÊN GIÁN</h2>
                            <p>
                             Những món ăn vặt như khoai tây chiên, gà rán, xúc xích chiên, bánh rán, bánh bao chiên, bánh mì kẹp thịt chiên giòn là con của ly hết 🍟🍗🌭🧋</p>
                         </div>
-                        <img src="gà.webp"  data-aos="fade-left">
+                        <img src="gà.webp"  data-aos="fade-left" class="img-interest1">
                     </div>
-                    <div class="item-sothich" >
-                    
-                        <img src="hellokitty.webp" data-aos="fade-right">
+                    <div class="item " id="item2">
+                        <img src="hellokitty.webp" data-aos="fade-right" class="img-interest2">
                          <div id="inneriteminterest">
-                            <h2 class="inneriteminterest-h2">HELLOKITTY</h2>
+                            <h2>HELLOKITTY</h2>
                             <p>
                             Đây là sở thích của Khánh ly mà mạnh mới biết 🙂🙂 </p>
                         </div>
+                       
+                        
                     </div>
-                    <div class="item-sothich">
+                    <div class="item">
                         <div id="inneriteminterest">
-                            <h2 class="inneriteminterest-h2">BÁNH CỦA MY</h2>
+                            <h2>BÁNH CỦA MY</h2>
                             <p>
                             Vì thích ăn bánh cookie matcha của hà My mà ly thường xuyên cùng Hà my bán bánh🍪🍪🍪 </p>
                             </div>
-                        <img src="bánh.webp"  data-aos="fade-left">
+                        <img src="bánh.webp"  data-aos="fade-left" class="img-interest3">
                     </div>
                     
                 </div>
@@ -217,7 +165,7 @@
             
             <!--phần hộp quà-->
                 <div class="giftbox" >
-                    <P>Gửi Khánh Ly món quà</P>
+                    <P class="tieude-qua">Gửi Khánh Ly món quà </P>
                     <img src="ảnh hộp quà tách nền (1).webp" class="gift" onclick="watchvideo()" data-aos="zoom-in-up" data-aos-duration="2000">
                 </div>
             
@@ -301,7 +249,8 @@
     <div id="balloon-container"></div>
 
 
-    
+    <!--viết javascript-->
+    <script src="index.js"></script>
     <!-- tích hợp ionicon -->
     <script  type = "module"  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" > </script> 
     <script  nomodule  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" > </script>
@@ -309,141 +258,53 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
     AOS.init();</script>
-    <!--viết javascript-->
-    <script src="index.js"></script>
-
     <script>
-        
-        
-        
+        const params=new URLSearchParams(window.location.search)
+        const id = params.get("id")
 
-
-
-        //
-        // gửi những thông tin mới lên cơ sở dữ liệu
-
-
-        const imgUrls=[]
-
- function save(){
-        const tieudedautrang=  document.querySelector('.tieude-dautrang').value
-        const dong2dautrang=document.querySelector('.dong2-dautrang').value
-        const ngaysinh=  document.querySelector('.ngay-sinh').value
-        const tieudequa=  document.querySelector('.tieude-qua').value
-        const tieudesothich=  document.querySelectorAll('.tieude-sothich')
-        const motasothich=  document.querySelectorAll('.mota-sothich')
-       
-        const arraytieudesothich = Array.from(tieudesothich).map((el)=>{ return el.value})
-        const arraymotasothich = Array.from(motasothich).map((el)=>{ return el.value})
-        
-        const inputFileImgs = document.querySelectorAll('.file-input');
-        
-             // kiểm tra xem chọn ảnh chưa
-          for (let i = 0; i < inputFileImgs.length; i++) {
-              if (!inputFileImgs[i].files[0]){
-                  alert(`please chọn ảnh ${i +1}`)
-                  return
-             }}
-              if(tieudedautrang == ""||dong2dautrang ==""||ngaysinh ==""||tieudequa ==""){
-                alert("bạn chưa điền đủ thông tin tiêu dề")
-                 return;
-             }
-
-           console.log(ngaysinh)
-            alert("ok rồi đó ae")
-         for (let i = 0; i < inputFileImgs.length; i++){
-             const file = inputFileImgs[0].files[0];
-            //kiểu dữ liệu để truyền file
-             const formData= new FormData();
-             formData.append("file",file);
-             formData.append("upload_preset","ảnh-web-sn")
-
-             fetch(`https://api.cloudinary.com/v1_1/dppaahazx/image/upload`,{
-                 method:"POST",
-                 body:formData
-             })
-             .then((res)=>res.json())
-             .then((data)=>{
-                 imgUrls.push(data.secure_url);
-                 if(i== (inputFileImgs.length - 1)){
-                     alert("đang lưu dữ liệu vào jsonbin");
-                     console.log(imgUrls)
-                     postJson()
-                 }
-                
-             })
-            .catch((eror)=>alert(eror))
-            
-
-
-        //     // Ý TƯỞNG LÀ DÙNG IF ĐỂ KIỂM TRA XEM ĐÃ POST ĐẾN ẢNH CUỐI CHƯA
-            
-            
-         }
-
-        function postJson(){
-            const postBox={
-                imgUrls : imgUrls,
-                tieudedautrang: tieudedautrang,
-                dong2dautrang: dong2dautrang,
-                ngaysinh: ngaysinh,
-                tieudequa: tieudequa,
-                arraytieudesothich: arraytieudesothich,
-                arraymotasothich: arraymotasothich,
+        function addImg(){
+            fetch(`https://api.jsonbin.io/v3/b/${id}/latest` ,{
+            method: "GET",
+            headers:{
+                "X-Access-Key": "$2a$10$jcTFWdrVTyEvPPqaOa/j9OURzv/IbGEHkQ/RWrfqvPah7kTjEWyX." ,
+                }
             }
-            
-            fetch("https://api.jsonbin.io/v3/b",{
-                method: "POST",
-                headers:{
-                  "Content-Type":"application/json",
-                  "X-Access-Key": "$2a$10$jcTFWdrVTyEvPPqaOa/j9OURzv/IbGEHkQ/RWrfqvPah7kTjEWyX." ,
-                  "X-Bin-Private": false,
-              },
-              body: JSON.stringify(postBox)
-
-            })
+            )
             .then(res=>res.json())
-            .then((data)=>{
-                const link = location.origin +"/happy_birthday.html?id="+ data.metadata.id
-                alert("Save successful")
-                alert("Link of your reading PAGE : "+ link)
+            .then(data=>{
+                const linkImg1= data.record.imgUrls[0];
+                const linkImg2= data.record.imgUrls[1];
+                const linkImg3= data.record.imgUrls[2];
+                const linkImg4= data.record.imgUrls[3];
+                const linkImg5= data.record.imgUrls[4];
+                const linkImg6= data.record.imgUrls[5];
+                const tieudedautrang=data.record.tieudedautrang;
+                const dong2dautrang=data.record.dong2dautrang;
+                document.querySelector(".ngay-sinh").src=data.record.ngaysinh;
+                document.querySelector(".tieude-qua").src=data.record.tieudequa;
+                const arraytieudesothich=data.record.arraytieudesothich;
+                const arraymotasothich=data.record.arraymotasothich;
+
+
+                document.querySelector(".item1").src= linkImg1
+                document.querySelector(".item2").src= linkImg2
+                document.querySelector(".item3").src= linkImg3
+                document.querySelector(".img-interest1").src= linkImg4
+                document.querySelector(".img-interest2").src= linkImg5
+                document.querySelector(".img-interest3").src= linkImg6
+                document.querySelector(".dong2-dautrang").src= dong2dautrang
+
+
+                
             })
-            .catch(error=> {
-            alert(error)
-          })
+            .catch(err=>{
+                alert(err)
+            })
         }
-        
-    }
+        addImg();
     </script>
-
-
-  <!--  <script>
-        
-  
-
-  // 2. Upload từng ảnh lên Cloudinary
-  for (let i = 0; i < inputs.length; i++) {
-    const file = inputs[i].files[0];
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("upload_preset", uploadPreset);
-
-    try {
-      const res = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
-        method: "POST",
-        body: formData
-      });
-      const data = await res.json();
-      imageUrls.push(data.secure_url); // 3. Lấy link ảnh
-    } catch (error) {
-      status.textContent = `❌ Lỗi upload ảnh thứ ${i + 1}`;
-      return;
-    }
-  }
-        </script>-->
-
     
-
+</lottie-player>
 </body>
 </html>
 
