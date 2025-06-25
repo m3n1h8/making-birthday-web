@@ -136,37 +136,7 @@ notify.addEventListener("click",baloon);
     }
 
 
-    //
-    // nổi phần lời chúc
-    const details = document.querySelector("detail");
-    const loichuc = document.querySelector(".loichuc");
-    const summary1 = document.querySelector(".summary1");
-    const summary2 = document.querySelector(".summary2");
-    const summary3 = document.querySelector(".summary3");
-    const summary4 = document.querySelector(".summary4");
-    const loichucbox = document.querySelector(".loichucbox");
-    const manh = document.querySelector(".manh");
-
-    function showloichuckly(){
-         
-         loichucbox.style.zIndex="109";
-
-        backgroundmusicicon.style.zIndex="70"
-         loichucbox.setAttribute("class","loichucshowing");
-            
-         layoutcontainer.style.zIndex="99";
-         layoutcontainer.style.display="flex";
-      //   layoutcontainer.style.opacity="1";
-         videobox.style.display="none"; 
-         layoutcontainer.addEventListener("click",hide);
-         backgroundmusic.pause();
-       //  manh.play();
-
-    }
-    summary1.addEventListener("click",showloichuckly);
-    summary2.addEventListener("click",showloichuckly);
-    summary3.addEventListener("click",showloichuckly);
-    summary4.addEventListener("click",showloichuckly);
+    
 //
 // ẩn video 
 function hide(){

@@ -7,6 +7,10 @@ body{
     font-family: 'Poppins', sans-serif; 
     background-color: #fffaea;
     overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    
     
     
     
@@ -18,7 +22,8 @@ body{
     justify-content: center;
     position: absolute;
     inset: 0;
-    background-color: rgba(52, 50, 44, 0.7);
+    background-color: rgba(52, 50, 44, 0.4);
+    
     z-index: 99;
 }
 .videobox{
@@ -70,6 +75,7 @@ video{
     display: block;
     margin: 10%;
     border-radius: 20px;
+    max-width: 100%;
 }
 
 .container {
@@ -582,58 +588,12 @@ h2{
 
 
 
-/*phần lời chúc của mọi người*/
-.loichucbox{
-    margin-top: 300px;
-    
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
- 
-}
-.loichucintro{
-    font-size: 50px;
-    font-weight: 600;
-    color:#613f20;
-    margin-bottom: 70px;
-    text-transform: uppercase;
-    
-}
-.loichuc{
-    
-    border-radius: 40px;
-    width: 80%;
-    background: #fcfaf4;
-    text-align: center;
-    padding: 30px 10px;
-    font-family:Dancing Script, cursive;
-    font-size: 50px;
-    box-shadow: 4px 4px 10px  #ae7b38;
-}
-details{
-    margin-bottom: 50px;
-}
-audio{
-    width: 300px;
-}
-.day{
-    width: 3px;
-    height: 100px;
-    background-color: #9d5a2a;
-    border-left: solid 1px #FCFAF4 ;
-}
 
-.loichucshowing{
-    position: relative;
-    z-index: 109;
-    margin-top: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transform: scale(1.1);
-    transition: 1s ease-in-out;
-}
+
+
+
+
+
 
 
 #backgroundmusicicon{
@@ -682,7 +642,7 @@ header img{
     text-shadow: #412105 4px 2px 4px ;
  }
  header p{
-    color: #FFFFFF;
+    color:#5E940D;
     position: absolute;
     top: 76%;
     left: 5%;
@@ -885,6 +845,7 @@ header img{
 }
 .form-nhap-lieu2{
     position: fixed;
+    
     z-index: 300;
     right: 30px;
     top:30px;

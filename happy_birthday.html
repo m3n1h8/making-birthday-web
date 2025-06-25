@@ -69,7 +69,7 @@
             <div class="videobox">
                 <button onclick="hide()" class="btnhide">X</button>
                 <video  controls>
-                    <source src="lv_7401923482826591506_20250521205935.mp4" type="video/mp4">
+                    <source src="lv_7401923482826591506_20250521205935.mp4" type="video/mp4" class="video">
                                 
                 </video>
             </div>
@@ -78,7 +78,7 @@
         <header>
             <img src="ảnh nền.jpg" class="headphoto" >
             
-            <h1 data-aos="fade-up-right">Hôm nay <br>là  sinh nhật <br>Khánh Ly</h1>
+            <h1 data-aos="fade-up-right" class="tieude-dautrang">Hôm nay <br>là  sinh nhật <br>Khánh Ly</h1>
             <p class="headp dong2-dautrang" data-aos="fade-up-left">chúc cậu sinh nhật vui vẻ
 
             </p>
@@ -108,8 +108,8 @@
                     
                     <div class="item">
                         <div id="inneriteminterest">
-                           <h2>ĂN ĐỒ CHIÊN GIÁN</h2>
-                           <p>
+                           <h2 class="tieude-sothich">ĂN ĐỒ CHIÊN GIÁN</h2>
+                           <p class="mota-sothich">
                             Những món ăn vặt như khoai tây chiên, gà rán, xúc xích chiên, bánh rán, bánh bao chiên, bánh mì kẹp thịt chiên giòn là con của ly hết 🍟🍗🌭🧋</p>
                         </div>
                         <img src="gà.webp"  data-aos="fade-left" class="img-interest1">
@@ -117,8 +117,8 @@
                     <div class="item " id="item2">
                         <img src="hellokitty.webp" data-aos="fade-right" class="img-interest2">
                          <div id="inneriteminterest">
-                            <h2>HELLOKITTY</h2>
-                            <p>
+                            <h2 class="tieude-sothich">HELLOKITTY</h2>
+                            <p class="mota-sothich">
                             Đây là sở thích của Khánh ly mà mạnh mới biết 🙂🙂 </p>
                         </div>
                        
@@ -126,8 +126,8 @@
                     </div>
                     <div class="item">
                         <div id="inneriteminterest">
-                            <h2>BÁNH CỦA MY</h2>
-                            <p>
+                            <h2 class="tieude-sothich">BÁNH CỦA MY</h2>
+                            <p class="mota-sothich">
                             Vì thích ăn bánh cookie matcha của hà My mà ly thường xuyên cùng Hà my bán bánh🍪🍪🍪 </p>
                             </div>
                         <img src="bánh.webp"  data-aos="fade-left" class="img-interest3">
@@ -171,50 +171,7 @@
             
 
             <!--phần lời chúc của mọi người   -->    
-                <div class="loichucbox">
-                    <h2 class="loichucintro">Ngày cậu lên 17 tuổi<br> bọn mình có đôi lời muốn nói</h2>
-                    <div class="loichuc" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-delay="100">
-                        <details>
-                            <summary class="summary1">MẠNH</summary>
-                            <p>Chúc Khánh LY xinh gái, học giỏi, giàu có nhiều tiền, mua nhiều thứ xinh xinh cute, mua nhiều đồ ăn, nhận được nhiều quà trong ngày sinh nhật, và đỗ trường mình mong muốn.</p>
-                        </details>
-                        <audio src="mạnh chúc kly ver2.mp3" controls  class="manh" ></audio>
-                    </div>
-                    <div class="day" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-delay="100"></div>
-
-                    <div class="loichuc" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-delay="100">
-                        <details>
-                            <summary class="summary2">MY</summary>
-                            <p>Chúc Khánh Ly có một sinh nhật vui vẻ và hạnh phúc nha. tao không biết nói gì cả tại tao đã viết hết trong thư rồi nhưng có một điều m phải nhớ là đó là một điều rrrrrất đặc biệt</p>
-                        </details>
-                        <audio src="My chúc kly.mp3" controls ></audio>
-                    </div>
-                    <div class="day" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-delay="100"></div>
-                    <div class="loichuc" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-delay="100">
-                        <details>
-                            <summary class="summary3">HOA</summary>
-                            <p>Chúc Khánh Ly của năm 17 tuổi sinh nhật vui vẻ chúc Khánh ly cười thôi cũng ra tiền và được học sinh giỏi nhé  </p>
-                        
-                        </details>
-                        <audio src="Hoa chúc kly.mp3" controls ></audio>
-                    </div>
-                    <div class="day" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-delay="100"></div>
-                    <div class="loichuc" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-delay="100" >
-                        <details>
-                            <summary class="summary4">LÂM 
-
-                            </summary>
-                            <p>Chúc khánh ly năm sau được học sinh giỏi nhá</p>
-                        
-                        </details>
-                        <audio src="lâm chúc sn kly.mp3" controls ></audio>
-                    </div>
-
-
-
-
-
-                </div>
+           
             </div>
         </div>
         <audio autoplay loop muted id="backgroundmusic" >
@@ -239,7 +196,6 @@
                     </ul>
                 </li>
                 <li>Bản quyền thuộc về tcml.com</li>
-               
             </ul>
         </footer>
     </div>
@@ -278,12 +234,20 @@
                 const linkImg4= data.record.imgUrls[3];
                 const linkImg5= data.record.imgUrls[4];
                 const linkImg6= data.record.imgUrls[5];
-                const tieudedautrang=data.record.tieudedautrang;
-                const dong2dautrang=data.record.dong2dautrang;
-                document.querySelector(".ngay-sinh").src=data.record.ngaysinh;
-                document.querySelector(".tieude-qua").src=data.record.tieudequa;
                 const arraytieudesothich=data.record.arraytieudesothich;
                 const arraymotasothich=data.record.arraymotasothich;
+                const tieudesothich= document.querySelectorAll(".tieude-sothich")
+                const motasothich= document.querySelectorAll(".mota-sothich")
+                
+                for(let i=0;i<tieudesothich.length;i++){
+                    tieudesothich[i].textContent=arraytieudesothich[i]
+                    motasothich[i].textContent=arraymotasothich[i]
+                }
+                document.querySelector(".tieude-dautrang").textContent=data.record.tieudedautrang;
+                document.querySelector(".dong2-dautrang").textContent=data.record.dong2dautrang;
+                document.querySelector(".ngay-sinh").textContent=data.record.ngaysinh;
+                document.querySelector(".tieude-qua").textContent=data.record.tieudequa;
+                
 
 
                 document.querySelector(".item1").src= linkImg1
@@ -292,8 +256,9 @@
                 document.querySelector(".img-interest1").src= linkImg4
                 document.querySelector(".img-interest2").src= linkImg5
                 document.querySelector(".img-interest3").src= linkImg6
-                document.querySelector(".dong2-dautrang").src= dong2dautrang
-
+                document.querySelector(".video").src=data.record.videoUrl
+                document.querySelector("video").load()
+                
 
                 
             })

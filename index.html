@@ -59,7 +59,7 @@
     <title>HAPPY BITHDAY KHÁNH LY ❤️</title>
 </head>
 <body>
-
+  
     <!--bảng nhập thông tin-->
     <div class="appear-edit-btn" onclick="appearEditForm()"><ion-icon id="icon-edit"name="create-outline"></ion-icon>edit</div>
 
@@ -127,7 +127,7 @@
                 </video>
             </div>
         </div>    
-        <!--đầu trang-->
+     <!--đầu trang-->
         <header>
             <img src="ảnh nền.jpg" class="headphoto" >
             
@@ -222,51 +222,17 @@
                 </div>
             
 
-            <!--phần lời chúc của mọi người   -->    
-                <div class="loichucbox">
-                    <h2 class="loichucintro">Ngày cậu lên 17 tuổi<br> bọn mình có đôi lời muốn nói</h2>
-                    <div class="loichuc" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-delay="100">
-                        <details>
-                            <summary class="summary1">MẠNH</summary>
-                            <p>Chúc Khánh LY xinh gái, học giỏi, giàu có nhiều tiền, mua nhiều thứ xinh xinh cute, mua nhiều đồ ăn, nhận được nhiều quà trong ngày sinh nhật, và đỗ trường mình mong muốn.</p>
-                        </details>
-                        <audio src="mạnh chúc kly ver2.mp3" controls  class="manh" ></audio>
-                    </div>
-                    <div class="day" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-delay="100"></div>
-
-                    <div class="loichuc" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-delay="100">
-                        <details>
-                            <summary class="summary2">MY</summary>
-                            <p>Chúc Khánh Ly có một sinh nhật vui vẻ và hạnh phúc nha. tao không biết nói gì cả tại tao đã viết hết trong thư rồi nhưng có một điều m phải nhớ là đó là một điều rrrrrất đặc biệt</p>
-                        </details>
-                        <audio src="My chúc kly.mp3" controls ></audio>
-                    </div>
-                    <div class="day" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-delay="100"></div>
-                    <div class="loichuc" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-delay="100">
-                        <details>
-                            <summary class="summary3">HOA</summary>
-                            <p>Chúc Khánh Ly của năm 17 tuổi sinh nhật vui vẻ chúc Khánh ly cười thôi cũng ra tiền và được học sinh giỏi nhé  </p>
-                        
-                        </details>
-                        <audio src="Hoa chúc kly.mp3" controls ></audio>
-                    </div>
-                    <div class="day" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-delay="100"></div>
-                    <div class="loichuc" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-delay="100" >
-                        <details>
-                            <summary class="summary4">LÂM 
-
-                            </summary>
-                            <p>Chúc khánh ly năm sau được học sinh giỏi nhá</p>
-                        
-                        </details>
-                        <audio src="lâm chúc sn kly.mp3" controls ></audio>
-                    </div>
-
-
-
-
-
+            <!--phần lời chúc của mọi người
+             -->    
+                <div class="loichuc-box">
+                    <h2>ngày ly lên tuổi 17 mình có điều muốn nói với cậu</h2>
+                    <div class="letter"><button><a href="">ấn vào đây</a></button></div>
                 </div>
+                
+
+
+
+        
             </div>
         </div>
         <audio autoplay loop muted id="backgroundmusic" >
@@ -299,7 +265,7 @@
 
 
     <div id="balloon-container"></div>
-
+  
 
     
     <!-- tích hợp ionicon -->
@@ -324,66 +290,95 @@
 
 
         const imgUrls=[]
+        let videoUrl=""
 
- function save(){
+async function save(){
         const tieudedautrang=  document.querySelector('.tieude-dautrang').value
         const dong2dautrang=document.querySelector('.dong2-dautrang').value
         const ngaysinh=  document.querySelector('.ngay-sinh').value
         const tieudequa=  document.querySelector('.tieude-qua').value
         const tieudesothich=  document.querySelectorAll('.tieude-sothich')
         const motasothich=  document.querySelectorAll('.mota-sothich')
+
        
         const arraytieudesothich = Array.from(tieudesothich).map((el)=>{ return el.value})
         const arraymotasothich = Array.from(motasothich).map((el)=>{ return el.value})
         
         const inputFileImgs = document.querySelectorAll('.file-input');
+        const inputFileVideo =document.querySelector(".video-qua")
         
-             // kiểm tra xem chọn ảnh chưa
+// kiểm tra xem chọn ảnh chưa
           for (let i = 0; i < inputFileImgs.length; i++) {
               if (!inputFileImgs[i].files[0]){
                   alert(`please chọn ảnh ${i +1}`)
                   return
              }}
-              if(tieudedautrang == ""||dong2dautrang ==""||ngaysinh ==""||tieudequa ==""){
-                alert("bạn chưa điền đủ thông tin tiêu dề")
-                 return;
+// kiểm tra có tiêu đề chx
+          if(tieudedautrang == ""||dong2dautrang ==""||ngaysinh ==""||tieudequa ==""){
+                alert("để có món quà trọn vẹn nhất. hãy chọn video")
+                 return
              }
+// kiểm tra có video chưa
+          if(!inputFileVideo){
+            alert("để có món quà trọn vẹn nhất. hãy chọn video")
+            return
+          }
 
-           console.log(ngaysinh)
-            alert("ok rồi đó ae")
+            
+            alert("đã chuẩn bị song dữ kiệu. ấn ok để bắt đầu tạo")
+
+
+            
+      try {
+            
+//fetch video
+            const video= inputFileVideo.files[0]
+            const formDataVideo= new FormData();
+            formDataVideo.append("file",video)
+            formDataVideo.append("upload_preset","ảnh-web-sn")
+           const videoRes=await fetch(`https://api.cloudinary.com/v1_1/dppaahazx/video/upload`,{
+                method:"POST",
+                body: formDataVideo
+            })
+            const videoData= await videoRes.json()
+            videoUrl=videoData.secure_url
+            alert("đã chuẩn bị song video")
+//fetch các ảnh
          for (let i = 0; i < inputFileImgs.length; i++){
              const file = inputFileImgs[0].files[0];
+
             //kiểu dữ liệu để truyền file
              const formData= new FormData();
              formData.append("file",file);
              formData.append("upload_preset","ảnh-web-sn")
 
-             fetch(`https://api.cloudinary.com/v1_1/dppaahazx/image/upload`,{
+            const imgRes=await fetch(`https://api.cloudinary.com/v1_1/dppaahazx/image/upload`,{
                  method:"POST",
                  body:formData
              })
-             .then((res)=>res.json())
-             .then((data)=>{
-                 imgUrls.push(data.secure_url);
-                 if(i== (inputFileImgs.length - 1)){
-                     alert("đang lưu dữ liệu vào jsonbin");
-                     console.log(imgUrls)
-                     postJson()
-                 }
+             const imgData= await imgRes.json()
+             imgUrls.push(imgData.secure_url)
+             if(i==(inputFileImgs.length - 1)){
+                alert("đã chuẩn bị xong ảnh");
+             }
+
+            //  .then((res)=>res.json())
+            //  .then((data)=>{
+            //      imgUrls.push(data.secure_url);
+            //      if(i== (inputFileImgs.length - 1)){
+            //          alert("đã chuẩn bị xong ảnh");
+            //          console.log(imgUrls)
+            //          postJson()
+            //      }
                 
-             })
-            .catch((eror)=>alert(eror))
-            
-
-
-        //     // Ý TƯỞNG LÀ DÙNG IF ĐỂ KIỂM TRA XEM ĐÃ POST ĐẾN ẢNH CUỐI CHƯA
-            
+            //  })
             
          }
 
-        function postJson(){
+        
             const postBox={
                 imgUrls : imgUrls,
+                videoUrl: videoUrl,
                 tieudedautrang: tieudedautrang,
                 dong2dautrang: dong2dautrang,
                 ngaysinh: ngaysinh,
@@ -392,7 +387,7 @@
                 arraymotasothich: arraymotasothich,
             }
             
-            fetch("https://api.jsonbin.io/v3/b",{
+            const Res= await fetch("https://api.jsonbin.io/v3/b",{
                 method: "POST",
                 headers:{
                   "Content-Type":"application/json",
@@ -402,47 +397,18 @@
               body: JSON.stringify(postBox)
 
             })
-            .then(res=>res.json())
-            .then((data)=>{
-                const link = location.origin +"/happy_birthday.html?id="+ data.metadata.id
-                alert("Save successful")
-                alert("Link of your reading PAGE : "+ link)
-            })
-            .catch(error=> {
-            alert(error)
-          })
-        }
+
+            const data= await Res.json()
+            const link = location.origin +"/happy_birthday.html?id="+ data.metadata.id
+            alert("✅đã hoàn thành")
+            alert("Link of your PAGE : "+ link)
+
         
-    }
+      }catch (error) {
+   alert("❌ Đã xảy ra lỗi: " + error);}
+        
+}
     </script>
-
-
-  <!--  <script>
-        
-  
-
-  // 2. Upload từng ảnh lên Cloudinary
-  for (let i = 0; i < inputs.length; i++) {
-    const file = inputs[i].files[0];
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("upload_preset", uploadPreset);
-
-    try {
-      const res = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
-        method: "POST",
-        body: formData
-      });
-      const data = await res.json();
-      imageUrls.push(data.secure_url); // 3. Lấy link ảnh
-    } catch (error) {
-      status.textContent = `❌ Lỗi upload ảnh thứ ${i + 1}`;
-      return;
-    }
-  }
-        </script>-->
-
-    
 
 </body>
 </html>
