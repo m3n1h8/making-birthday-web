@@ -121,7 +121,7 @@
                 tiêu đề: <input type="text" placeholder="gửi Khánh Ly món quà" class="tieude-qua"><br>
                 chọn video:<input type="file" accept="video/*" class="video-qua"><br>
             </fieldset>
-            <p style="font-size: 30px;margin-bottom: 20px;">💡hướng dẫn: để có trải nghiệm tốt nhất cho người nhận. Bạn có thể tối ưu dung lượng video bằng cách đưa lên chat GPT và nói "tối ưu dung lượng video"</p>
+            <p style="font-size: 30px;margin-bottom: 20px;">💡hướng dẫn: để người nhận có trải nghiệm tốt nhất. Bạn có thể tối ưu dung lượng video và ảnh bằng cách đưa lên chat GPT và nói "tối ưu dung lượng video/ảnh"</p>
             <fieldset>
                 <legend class="legend-first-child">THƯ</legend>
                 tiêu đề: <input type="text" placeholder="đây là thư của mình" class="tieude-thu"><br>
@@ -200,11 +200,11 @@
                     </div>
                     <div class="item-sothich">
                         <div id="inneriteminterest">
-                            <h2 class="inneriteminterest-h2">BÁNH CỦA MY</h2>
+                            <h2 class="inneriteminterest-h2">BÚN BÒ HUẾ</h2>
                             <p>
-                            Vì thích ăn bánh cookie matcha của hà My mà ly thường xuyên cùng Hà my bán bánh🍪🍪🍪 </p>
+                            MÓN ĂN CỰC KÌ YÊU THÍCH NHẤT CỦA KHÁNH LY🙂🙂</p>
                             </div>
-                        <img src="bánh.webp"  data-aos="fade-left">
+                        <img src="ảnh bún bò huế.jpg"  data-aos="fade-left">
                     </div>
                     
                 </div>
@@ -288,7 +288,7 @@
                         <li>Instagram</li>
                     </ul>
                 </li>
-                <li>Bản quyền thuộc về tcml.com</li>
+                <li>Bản quyền thuộc về TIMWARE</li>
                
             </ul>
         </footer>
@@ -464,19 +464,12 @@ async function save(){
             
             localStorage.setItem(`trang${times+1}`,link)
             localStorage.setItem("times",times+1);
-            // if(history.innerHTML==""){
-            //      for(let i=0; i<=times;i++){
-            //          const newhistory=document.createElement("p")
-            //          newhistory.innerHTML=`link${i+1}:${localStorage.getItem(`trang${i+1}`)}`
-            //          history.appendChild(newhistory)
-            //      }
-            //  }
-            //  else{
+          
             
                 const newhistory=document.createElement("p")
                 newhistory.innerHTML=`link${times+1}:${link}`
                  history.appendChild(newhistory)
-            // }
+            
             
             
 
