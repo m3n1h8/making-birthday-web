@@ -82,6 +82,7 @@ video{
   max-width: 100%;
   overflow-x: hidden;
   position: relative;
+  
     
   
 }
@@ -93,6 +94,7 @@ header{
     overflow-y: hidden;
      overflow-x: hidden;
     border-radius: 0 0 30px 30px;
+    
 }
 
     
@@ -550,14 +552,24 @@ h2{
 
 }
 .giftbox p{
-    text-align: center;
+   /* text-align: center;
 
     font-size: 30px;
     font-weight: 600;
     color:#613f20;
-    text-transform: uppercase;
+    text-transform: uppercase;*/
+    text-align: center;
+        margin-top: 190px;
+        font-size: 30px;
+        color:#613f20;
+       /* font-family: 'lobster', cursive;*/
+        font-weight: 600;
+        text-transform: uppercase;
+        text-shadow: #4d290a 5px 5px 17px 2px;
+        transition: 0.3s;
+        animation: introinterst 1s linear infinite ;}
     
-}
+
 .giftbox .gift{
     width: 50%;
     margin-left: 25%;
@@ -585,9 +597,104 @@ h2{
         transform: rotate(0deg);
     }
 }
+/*phần bức thư*/
+
+   .loichuc-box{
+    margin-top: 300px;
+   }
+   .loichuc-box h2{
+    text-align: center;
+        margin-top: 190px;
+        font-size: 30px;
+        color:#613f20;
+       
+        font-weight: 600;
+        text-transform: uppercase;
+        text-shadow: #4d290a 5px 5px 17px 2px;
+        transition: 0.3s;
+        animation: introinterst 1s linear infinite ;}
+   
+.letter-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        
+    }
+ 
+.letter{
+    width: 500px;
+    height: 300px;
+    border: solid 1px white;
+    border-bottom: whitesmoke;
+    margin-top: 60px;
+    
+   
+    transform-style: preserve-3d;
+    transition: all 2s ease;
+    
+
+}
+.letter:hover {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Định nghĩa chuyển động lắc */
+@keyframes shake {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(5deg); }
+  50%  { transform: rotate(-5deg); }
+  75%  { transform: rotate(3deg); }
+  100% { transform: rotate(0deg); }
+}
+.read-letter{
+     width: 500px;
+    height: 300px;
+    border: solid 1px white;
+    border-bottom: whitesmoke;
+    position: absolute;
+    transform:rotate3d(0, 1, 0, 180deg);
+    transform-style: preserve-3d;
+    transition: all 2s ease;
+}
 
 
+.back-page{
+    position:absolute;
+    inset: 0;
+    background:linear-gradient(180deg,beige,beige, bisque, bisque,rgb(231, 205, 175));
+    transform: translate3d(0, 0, -1px) rotate3d(0,1,0, 180deg);
+    
+}
 
+.font-page{
+    position: absolute;
+    inset: 0;
+    transform:translate3d(0,0,2px);
+    transform-style: preserve-3d;
+
+}
+.head{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 33.5%;
+    background:	linear-gradient(to bottom, #FF8A65, #FF7043);
+    
+    clip-path: polygon( 0 0, 100% 0, 50% 100%);
+    transition: 1s linear 1s ;
+    transform-origin: top;
+   
+}
+.body-fontpage{
+
+    position: absolute;
+    inset: 0;
+    border-top: solid 1px;
+    background:linear-gradient(to bottom, #FFE0B2, #FFB74D);
+    clip-path: polygon(0 0, 50% 33.33%, 100% 0, 100% 100%, 0 100%);
+}
 
 
 
@@ -777,13 +884,86 @@ header img{
 
 }
 /* phần điền thông tin cho người dùng */
+.nav{
+    position: fixed;
+    padding: 10px 30px 0 30px;
+    z-index: 300;
+    justify-content: end;
+    top:0;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color:transparent;
+    border-radius: 0 0 20px 20px;
+}
+.watch-history-btn{
+    background-color: rgb(251,251, 247);
+    color:#5E9431;
+    flex-grow: 1;
+    border-radius: 20px;    
+    text-align: center;
+    font-size:50px ;
+    box-shadow: 0 0 20px rgb(168, 168, 168) ;
+    padding: 15px;
+    
+}
+.history-box{
+    position: absolute;
+    top:10px;
+    background-color: rgb(251,251, 247);
+    width: calc(100% - 230px);
+    max-height:70vh;
+    overflow: auto;
+    transform: translateX(-120%);
+    transition: 0.5s;
+    border-radius: 20px;
+
+}
+.history-box2{
+    position: absolute;
+    top:10px;
+    background-color: rgb(251,251, 247) ;
+    box-shadow: 0 0 20px rgb(168, 168, 168) ;
+    width: calc(100% - 230px);
+    max-height:70vh;
+    overflow: auto;
+    transform: translateX(-14px);
+    transition: 0.5s;
+    border-radius: 20px;
+
+
+}
+.history{
+    padding: 20px;
+    word-break: break-word;
+    text-align: start;
+}
+.icon-hide-history{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 70px;
+    background-color:#5E940D;
+    color: #fff;
+    font-size: 60px;
+    font-weight: 600;
+    font-family:'Baloo 2', cursive; 
+    border-radius: 0 20px 0 20px;
+    cursor: pointer;
+    padding-left: 7px;
+    transition: 0.5s;  
+    transform: rotateY(180deg);
+}
+
 
 .appear-edit-btn{
-    position: fixed;
+   /* position: fixed;
     z-index: 300;
     right: 30px;
     top:30px;
-    height: 80px;
+    height: 80px;*/
     width: 170px;
     background-color: #5E940D;
     box-shadow: 0 0 20px rgb(168, 168, 168) ;
@@ -833,7 +1013,7 @@ header img{
     transform: translateX(1200px);
     z-index: 300;
     right: 30px;
-    top:30px;
+    top:10px;
     height: 60%;
     width: 50%;
     background-color:rgb(251,251, 247);
@@ -848,7 +1028,7 @@ header img{
     
     z-index: 300;
     right: 30px;
-    top:30px;
+    top:10px;
     height: 60%;
     width: 50%;
     background-color:rgb(251,251, 247);

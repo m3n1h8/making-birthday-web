@@ -219,3 +219,9 @@ function watchvideo(){
     formNhapLieu.setAttribute("class","form-nhap-lieu2")
     
   }
+
+  //
+  const historybox=document.querySelector(".history-box")
+  function appearhistory(){
+    historybox.classList.toggle("history-box2")
+  }

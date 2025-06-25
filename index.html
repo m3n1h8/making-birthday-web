@@ -55,13 +55,25 @@
     border-radius: 40px 0 px 0; 
     padding: 20px;
     margin-top: 200px;}
+
   </style>
     <title>HAPPY BITHDAY KHÁNH LY ❤️</title>
 </head>
 <body>
   
     <!--bảng nhập thông tin-->
-    <div class="appear-edit-btn" onclick="appearEditForm()"><ion-icon id="icon-edit"name="create-outline"></ion-icon>edit</div>
+    <div class="nav">
+        <div class="watch-history-btn" onclick="appearhistory()">
+            <P>xem lịch sử tạo</P>
+            <div class="history-box">
+                <div class="icon-hide-history"><ion-icon name="exit-outline"></ion-icon></div>
+                <div class="history"></div>
+                
+                <h2>do chúng tôi đang cải thiện nên hiện bạn có thể tạo 10 trang</h2>
+            </div>
+        </div>
+        <div class="appear-edit-btn" onclick="appearEditForm()"><ion-icon id="icon-edit"name="create-outline"></ion-icon>edit</div>
+    </div>
 
     <div class="form-nhap-lieu" >
         <div class="hide-edit-btn" onclick="hideEditForm()"><ion-icon name="exit-outline" id="hide-edit-icon"></ion-icon></div>
@@ -103,11 +115,21 @@
                 </fieldset>
                 
             </fieldset>
+            <p style="font-size: 30px;margin-bottom: 20px;">💡hướng dẫn: các ảnh phần sở thích nên có kích thước bằng nhau để tạo bố cục đẹp nhất</p>
             <fieldset>
                 <legend class="legend-first-child">QUÀ</legend>
                 tiêu đề: <input type="text" placeholder="gửi Khánh Ly món quà" class="tieude-qua"><br>
                 chọn video:<input type="file" accept="video/*" class="video-qua"><br>
             </fieldset>
+            <p style="font-size: 30px;margin-bottom: 20px;">💡hướng dẫn: để có trải nghiệm tốt nhất cho người nhận. Bạn có thể tối ưu dung lượng video bằng cách đưa lên chat GPT và nói "tối ưu dung lượng video"</p>
+            <fieldset>
+                <legend class="legend-first-child">THƯ</legend>
+                tiêu đề: <input type="text" placeholder="đây là thư của mình" class="tieude-thu"><br>
+                link thư: <input type="text" placeholder="https://m3n1h8.github.io/letter-app/" class="link-thu">
+                
+
+            </fieldset>
+            <p style="font-size: 30px;margin-bottom: 20px;">💡hướng dẫn: vào trang <a href="https://m3n1h8.github.io/letter-app/">m3n1h8.github.io/letter-app</a> để viết thư và lấy link</p>
             <div class="save-new-inform-btn" onclick="save()">TẠO</div>
             
         </form>
@@ -226,7 +248,17 @@
              -->    
                 <div class="loichuc-box">
                     <h2>ngày ly lên tuổi 17 mình có điều muốn nói với cậu</h2>
-                    <div class="letter"><button><a href="">ấn vào đây</a></button></div>
+                    <div class="letter-box">
+                        <a href="https://m3n1h8.github.io/letter-app/">
+                            <div class="letter">
+                                <div class="back-page" id="root"></div>
+                                <div class="font-page">
+                                    <div class="head"></div>
+                                    <div class="body-fontpage"></div>
+                                </div>
+                            </div>
+                        </a> 
+                    </div>
                 </div>
                 
 
@@ -235,7 +267,7 @@
         
             </div>
         </div>
-        <audio autoplay loop muted id="backgroundmusic" >
+        <audio autoplay loop id="backgroundmusic" >
         <source src="Happy Birthday to You (Always 14) - AMEE x Hoàng Dũng x Obito x Hứa Kim Tuyền  OFFICIAL LYRIC VIDEO.mp3" type="audio/mpeg">
         
         </audio>
@@ -286,17 +318,42 @@
 
 
         //
-        // gửi những thông tin mới lên cơ sở dữ liệu
+        // hiện lịch sử khi vừa load trang Web
+
+         function hienhistoryfirst(){
+            const history=document.querySelector(".history")
+            const times= parseInt(localStorage.getItem("times")|| 0)
+            if(times==0){
+                return
+            }else{
+                if(history.innerHTML==""){
+                 for(let i=1; i<=times;i++){
+                     const newhistory=document.createElement("p")
+                     newhistory.innerHTML=`link${i}:${localStorage.getItem(`trang${i}`)}`
+                     history.appendChild(newhistory)
+                 }
+             }
+            }}
+            
+            
+             
 
 
-        const imgUrls=[]
-        let videoUrl=""
+            hienhistoryfirst()
+
+
+        
 
 async function save(){
+        const imgUrls=[]
+        let videoUrl=""
+        
         const tieudedautrang=  document.querySelector('.tieude-dautrang').value
         const dong2dautrang=document.querySelector('.dong2-dautrang').value
         const ngaysinh=  document.querySelector('.ngay-sinh').value
         const tieudequa=  document.querySelector('.tieude-qua').value
+        const tieudethu =document.querySelector('.tieude-thu').value
+        const linkthu=document.querySelector('.link-thu').value
         const tieudesothich=  document.querySelectorAll('.tieude-sothich')
         const motasothich=  document.querySelectorAll('.mota-sothich')
 
@@ -306,7 +363,13 @@ async function save(){
         
         const inputFileImgs = document.querySelectorAll('.file-input');
         const inputFileVideo =document.querySelector(".video-qua")
-        
+//kiểm tra xem đã tạo bao nhiêu trang        
+        const history=document.querySelector(".history")
+            const times= parseInt(localStorage.getItem("times")||0)
+            if(times>=10){
+                alert("bạn đã tạo ra đủ 10 trang. ")
+                return
+            }
 // kiểm tra xem chọn ảnh chưa
           for (let i = 0; i < inputFileImgs.length; i++) {
               if (!inputFileImgs[i].files[0]){
@@ -319,7 +382,7 @@ async function save(){
                  return
              }
 // kiểm tra có video chưa
-          if(!inputFileVideo){
+          if(!inputFileVideo.files[0]){
             alert("để có món quà trọn vẹn nhất. hãy chọn video")
             return
           }
@@ -345,7 +408,7 @@ async function save(){
             alert("đã chuẩn bị song video")
 //fetch các ảnh
          for (let i = 0; i < inputFileImgs.length; i++){
-             const file = inputFileImgs[0].files[0];
+             const file = inputFileImgs[i].files[0];
 
             //kiểu dữ liệu để truyền file
              const formData= new FormData();
@@ -362,16 +425,7 @@ async function save(){
                 alert("đã chuẩn bị xong ảnh");
              }
 
-            //  .then((res)=>res.json())
-            //  .then((data)=>{
-            //      imgUrls.push(data.secure_url);
-            //      if(i== (inputFileImgs.length - 1)){
-            //          alert("đã chuẩn bị xong ảnh");
-            //          console.log(imgUrls)
-            //          postJson()
-            //      }
-                
-            //  })
+           
             
          }
 
@@ -383,8 +437,11 @@ async function save(){
                 dong2dautrang: dong2dautrang,
                 ngaysinh: ngaysinh,
                 tieudequa: tieudequa,
+                tieudethu: tieudethu,
+                linkthu: linkthu,
                 arraytieudesothich: arraytieudesothich,
                 arraymotasothich: arraymotasothich,
+
             }
             
             const Res= await fetch("https://api.jsonbin.io/v3/b",{
@@ -399,13 +456,34 @@ async function save(){
             })
 
             const data= await Res.json()
-            const link = location.origin +"/happy_birthday.html?id="+ data.metadata.id
+            const link = location.origin +"/making-birthday-web/happy_birthday.html?id="+ data.metadata.id
             alert("✅đã hoàn thành")
-            alert("Link of your PAGE : "+ link)
+            alert("Link trang bạn vừa tạo: "+ link)
+//tạo lịch sử các link đã tạo
+            
+            
+            localStorage.setItem(`trang${times+1}`,link)
+            localStorage.setItem("times",times+1);
+            // if(history.innerHTML==""){
+            //      for(let i=0; i<=times;i++){
+            //          const newhistory=document.createElement("p")
+            //          newhistory.innerHTML=`link${i+1}:${localStorage.getItem(`trang${i+1}`)}`
+            //          history.appendChild(newhistory)
+            //      }
+            //  }
+            //  else{
+            
+                const newhistory=document.createElement("p")
+                newhistory.innerHTML=`link${times+1}:${link}`
+                 history.appendChild(newhistory)
+            // }
+            
+            
 
         
       }catch (error) {
    alert("❌ Đã xảy ra lỗi: " + error);}
+   
         
 }
     </script>

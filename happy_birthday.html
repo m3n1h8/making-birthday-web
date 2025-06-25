@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta property="og:title" content="Sinh nhật Kly 🎉" />
-    <meta property="og:description" content="Trang web kỷ niệm sinh nhật của Kly do Mạnh làm ❤️" />
-    <meta property="og:image" content="https://m3n1h8.github.io/bithday-kly/anh-banh-sn.png" />
+    <meta property="og:title" content="chúc mừng Sinh nhật 🎉" />
+    <meta property="og:description" content="trang web chúc mừng sinh nhật của tcml.com" />
+    <meta property="og:image" content="https://m3n1h8.github.io/bithday-kly/anh-banh-sn.png"/>
     <meta property="og:url" content="https://m3n1h8.github.io/bithday-kly/" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:type" content="website" />
@@ -171,10 +171,25 @@
             
 
             <!--phần lời chúc của mọi người   -->    
+                  
+                <div class="loichuc-box">
+                    <h2 class="tieude-thu">ngày ly lên tuổi 17 mình có điều muốn nói với cậu</h2>
+                    <div class="letter-box">
+                        <a href="https://m3n1h8.github.io/letter-app/read.html?id=685bcb678a456b7966b54e23" class="link-thu">
+                            <div class="letter">
+                                <div class="back-page" id="root"></div>
+                                <div class="font-page">
+                                    <div class="head"></div>
+                                    <div class="body-fontpage"></div>
+                                </div>
+                            </div>
+                        </a> 
+                    </div>
+                </div>
            
             </div>
         </div>
-        <audio autoplay loop muted id="backgroundmusic" >
+        <audio autoplay loop id="backgroundmusic" >
         <source src="Happy Birthday to You (Always 14) - AMEE x Hoàng Dũng x Obito x Hứa Kim Tuyền  OFFICIAL LYRIC VIDEO.mp3" type="audio/mpeg">
         
         </audio>
@@ -247,6 +262,7 @@
                 document.querySelector(".dong2-dautrang").textContent=data.record.dong2dautrang;
                 document.querySelector(".ngay-sinh").textContent=data.record.ngaysinh;
                 document.querySelector(".tieude-qua").textContent=data.record.tieudequa;
+                document.querySelector(".tieude-thu").textContent=data.record.tieudethu
                 
 
 
@@ -258,6 +274,8 @@
                 document.querySelector(".img-interest3").src= linkImg6
                 document.querySelector(".video").src=data.record.videoUrl
                 document.querySelector("video").load()
+
+                document.querySelector(".link-thu").href=data.record.linkthu||"https://m3n1h8.github.io/letter-app/read.html?id=685bcb678a456b7966b54e23"
                 
 
                 
