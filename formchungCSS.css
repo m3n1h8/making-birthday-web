@@ -911,6 +911,7 @@ header img{
 .history-box{
     position: absolute;
     top:10px;
+    opacity: 0;
     background-color: rgb(251,251, 247);
     width: calc(100% - 230px);
     max-height:70vh;
@@ -923,6 +924,7 @@ header img{
 .history-box2{
     position: absolute;
     top:10px;
+    opacity: 1;
     background-color: rgb(251,251, 247) ;
     box-shadow: 0 0 20px rgb(168, 168, 168) ;
     width: calc(100% - 230px);

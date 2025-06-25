@@ -223,5 +223,9 @@ function watchvideo(){
   //
   const historybox=document.querySelector(".history-box")
   function appearhistory(){
-    historybox.classList.toggle("history-box2")
+    historybox.classList.add("history-box2")
   }
+  function hidehistory(){
+    historybox.classList.remove("history-box2")
+  }
+
