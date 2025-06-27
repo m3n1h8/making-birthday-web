@@ -927,12 +927,13 @@ header img{
     opacity: 1;
     background-color: rgb(251,251, 247) ;
     box-shadow: 0 0 20px rgb(168, 168, 168) ;
-    width: calc(100% - 230px);
+    width:calc(100% - 230px) ;
     max-height:70vh;
     overflow: auto;
     transform: translateX(-14px);
     transition: 0.5s;
     border-radius: 20px;
+    
 }
 .history{
     padding: 20px;
@@ -965,12 +966,17 @@ header img{
     top:30px;
     height: 80px;*/
     width: 170px;
-    background-color: #5E940D;
+    background-color:#5E940D;
+    
+   
+    
+
     box-shadow: 0 0 20px rgb(168, 168, 168) ;
     border-radius: 20px;
     font-size: 50px;
     text-align: center;
-    color: #efede5;
+    color:white;
+    
     transition: 0.5s;
     
 }
@@ -1037,6 +1043,7 @@ header img{
     overflow: hidden;
     max-width: 1200px;
     transition: 0.5s;
+   
 }
 form{
     height: 100%;
