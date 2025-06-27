@@ -370,15 +370,17 @@ async function save(){
                 alert("bạn đã tạo ra đủ 10 trang. ")
                 return
             }
+
+           
 // kiểm tra xem chọn ảnh chưa
           for (let i = 0; i < inputFileImgs.length; i++) {
               if (!inputFileImgs[i].files[0]){
-                  alert(`please chọn ảnh ${i +1}`)
+                  alert(`để có món quà trọn vẹn nhất. hãy chọn đủ ảnh`)
                   return
              }}
 // kiểm tra có tiêu đề chx
           if(tieudedautrang == ""||dong2dautrang ==""||ngaysinh ==""||tieudequa ==""){
-                alert("để có món quà trọn vẹn nhất. hãy chọn video")
+                alert("để có món quà trọn vẹn nhất. hãy điền đủ thông tin")
                  return
              }
 // kiểm tra có video chưa
@@ -388,7 +390,7 @@ async function save(){
         //   }
 
             
-        //     alert("đã chuẩn bị song dữ kiệu. ấn ok để bắt đầu tạo")
+            alert("bắt đầu chuẩn bị tài nguyên")
 
 
             
@@ -405,7 +407,7 @@ async function save(){
             })
             const videoData= await videoRes.json()
             videoUrl=videoData.secure_url
-            alert("đã chuẩn bị song video")
+            alert("đã chuẩn bị song video.Bắt đầu chuẩn bị ảnh...")
 //fetch các ảnh
          for (let i = 0; i < inputFileImgs.length; i++){
              const file = inputFileImgs[i].files[0];
@@ -422,7 +424,7 @@ async function save(){
              const imgData= await imgRes.json()
              imgUrls.push(imgData.secure_url)
              if(i==(inputFileImgs.length - 1)){
-                alert("đã chuẩn bị xong ảnh");
+                alert("đã chuẩn bị xong ảnh.Bắt đầu tạo");
              }
 
            
